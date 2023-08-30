@@ -120,13 +120,15 @@ while True:
 
 
     for i in cuerpo:
-        if i.distance(serpiente) <20:
-            for i in cuerpo:
-                i.clear()
-                i.hideturtle()
-            serpiente.home()
-            cuerpo.clear()
-            serpiente.direction = "stop"
-    time.sleep(retraso)
+    if i.distance(serpiente) < 20:
+        for i in cuerpo:
+            i.clear()
+            i.hideturtle()
+        serpiente.home()
+        cuerpo.clear()
+        serpiente.direction = "stop"
+        marcador = 0  # Reiniciar el marcador aquí
+        texto.clear()
+        texto.write("Marcador:{}\tMarcador mas alto:{}".format(marcador, marcador_alto), align="center", font=("verdana", 24))
 
 turtle.done()
